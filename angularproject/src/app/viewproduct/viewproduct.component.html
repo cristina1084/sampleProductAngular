@@ -1,0 +1,16 @@
+<div class="container">
+    <table class="highlight">
+        <thead>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of sdata">
+                <td>{{d.productId}}</td>
+                <td>{{d.productName}}</td>
+                <td>{{d.productPrice}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
