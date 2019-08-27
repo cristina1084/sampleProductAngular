@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductService {
 
+  data;
   constructor(private http: HttpClient) { }
 
   getData(){
@@ -14,6 +15,7 @@ export class ProductService {
   }
 
   postData(x,y,z){
-    return this.http.post("http://localhost:8080/postdata", {productId:x, productName:y, productPrice:z});    
+    this.data = {productId:x, productName:y, productPrice:z}
+    return this.http.post("http://localhost:8080/postdata", this.data);    
   }
 }
