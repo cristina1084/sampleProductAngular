@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-addproduct',
   templateUrl: './addproduct.component.html',
@@ -8,7 +8,7 @@ import { ProductService } from '../product.service';
 })
 export class AddproductComponent implements OnInit {
 
-  constructor(private ps: ProductService) { }
+  constructor(private ps: ProductService, private router: Router) { }
 
   pid;
   pname;
@@ -21,5 +21,6 @@ export class AddproductComponent implements OnInit {
     this.ps.postData(this.pid, this.pname, this.pprice).subscribe(data=>{
 
     })
+    this.router.navigateByUrl("")
   }
 }

@@ -10,8 +10,11 @@
                 <td>{{d.productId}}</td>
                 <td>{{d.productName}}</td>
                 <td>{{d.productPrice}}</td>
+                <td> 
+                    <a [routerLink]="['/edit', d.productId]"> <input type="button" value="Edit" class="waves-effect waves-light btn" > </a>
+                </td>
                 <td>
-                    <input type="button" value="Add to Cart" class="waves-effect waves-light btn" (click)="addToCart()">
+                    <input type="button" value="Delete" class="waves-effect waves-light btn" (click)="deleteData()">
                 </td>
             </tr>
         </tbody>

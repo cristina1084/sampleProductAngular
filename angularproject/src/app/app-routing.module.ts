@@ -12,7 +12,7 @@ import { DataComponent } from './data/data.component';
 
 const routes: Routes = [
   { path : "new", component : AddproductComponent},
-  { path : "edit", component : EditproductComponent},
+  { path : "edit/:pid", component : EditproductComponent},
   { path : "", component : ViewproductComponent},
   { path : "delete", component : DeleteproductComponent},
   { path : "contact", component : ContactComponent},

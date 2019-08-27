@@ -18,4 +18,8 @@ export class ProductService {
     this.data = {productId:x, productName:y, productPrice:z}
     return this.http.post("http://localhost:8080/postdata", this.data);    
   }
+
+  getDataById(a){
+    return this.http.get("http://localhost:8080/getdata/"+a);
+  }
 }
