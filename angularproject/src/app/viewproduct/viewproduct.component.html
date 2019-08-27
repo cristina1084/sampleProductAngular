@@ -10,6 +10,12 @@
                 <td>{{d.productId}}</td>
                 <td>{{d.productName}}</td>
                 <td>{{d.productPrice}}</td>
+                <td> 
+                    <a routerLink="/edit"> <input type="button" value="Edit" class="waves-effect waves-light btn"> </a>
+                </td>
+                <td>
+                    <input type="button" value="Delete" class="waves-effect waves-light btn" (click)="deleteData()">
+                </td>
             </tr>
         </tbody>
     </table>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from '../message.service';
+import { ProductService } from '../product.service';
 @Component({
   selector: 'app-viewproduct',
   templateUrl: './viewproduct.component.html',
@@ -7,11 +7,11 @@ import { MessageService } from '../message.service';
 })
 export class ViewproductComponent implements OnInit {
 
-  constructor(private ms: MessageService) { }
+  constructor(private ps: ProductService) { }
 
   sdata;
   ngOnInit() {
-    this.ms.getData().subscribe(data=>{
+    this.ps.getData().subscribe(data=>{
       this.sdata = data;
     })
   }

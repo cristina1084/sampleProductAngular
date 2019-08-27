@@ -15,7 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { DataComponent } from './data/data.component';
 
 import { CalcService } from './calc.service';
-import { MessageService } from './message.service';
+import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { MessageService } from './message.service';
   ],
   providers: [
     CalcService,
-    MessageService
+    ProductService
   ],
   bootstrap: [AppComponent]
 })

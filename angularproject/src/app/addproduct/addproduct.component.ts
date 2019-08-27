@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from '../message.service';
+import { ProductService } from '../product.service';
+
 @Component({
   selector: 'app-addproduct',
   templateUrl: './addproduct.component.html',
@@ -7,7 +8,7 @@ import { MessageService } from '../message.service';
 })
 export class AddproductComponent implements OnInit {
 
-  constructor(private ms: MessageService) { }
+  constructor(private ps: ProductService) { }
 
   pid;
   pname;
@@ -17,7 +18,7 @@ export class AddproductComponent implements OnInit {
 
   submitData(){
     
-    this.ms.postData(this.pid, this.pname, this.pprice).subscribe(data=>{
+    this.ps.postData(this.pid, this.pname, this.pprice).subscribe(data=>{
 
     })
   }

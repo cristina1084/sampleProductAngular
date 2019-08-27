@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CalcService } from '../calc.service';
-import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-data',
@@ -15,7 +14,7 @@ export class DataComponent implements OnInit {
   msg={};
   msg1={}; */
   sdata;
-  constructor(private calc:CalcService, private ms:MessageService) { }
+  constructor(private calc:CalcService) { }
 
   ngOnInit() {
     
