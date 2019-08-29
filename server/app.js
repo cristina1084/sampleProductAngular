@@ -55,7 +55,7 @@ app.post("/postdata", (req,res)=>{
   var p1 = new product(req.body);
   p1.save((err)=>{
     if (err) throw err;
-    else res.send({msg:"Message received"})
+    else res.send({msg:"Data Added"})
   })
 })
 
@@ -64,6 +64,27 @@ app.get("/getdata/:pid",(req,res)=>{
     if (err) throw err;
     else res.send(result);
   })
+})
+
+app.get("/deletedata/:pid",(req,res)=>{
+  product.deleteOne({productId:req.params.pid},(err,result)=>{
+    if (err) throw err;
+    else  res.send({msg:"Data Deleted"})
+  })
+})
+
+app.post("/editdata",(req,res)=>{
+  product.updateOne(
+    {productId:req.body.productId},
+    {$set:{
+      productName: req.body.productName,
+      productPrice: req.body.productPrice
+    }},
+    (err,result)=>{
+      if (err) throw err;
+      else res.send({msg:"Data updated"})
+    }
+  )
 })
 
 app.listen(8080,()=>{

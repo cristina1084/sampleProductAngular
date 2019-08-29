@@ -14,7 +14,7 @@
                     <a [routerLink]="['/edit', d.productId]"> <input type="button" value="Edit" class="waves-effect waves-light btn" > </a>
                 </td>
                 <td>
-                    <input type="button" value="Delete" class="waves-effect waves-light btn" (click)="deleteData()">
+                    <input type="button" value="Delete" class="waves-effect waves-light btn" (click)="deleteData(d.productId)">
                 </td>
             </tr>
         </tbody>

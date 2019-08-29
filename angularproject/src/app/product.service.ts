@@ -22,4 +22,13 @@ export class ProductService {
   getDataById(a){
     return this.http.get("http://localhost:8080/getdata/"+a);
   }
+
+  editData(a,b,c){
+    this.data = {productId:a, productName:b, productPrice:c}
+    return this.http.post("http://localhost:8080/editdata",this.data);
+  }
+
+  deleteData(a){
+    return this.http.get("http://localhost:8080/deletedata/"+a);
+  }
 }

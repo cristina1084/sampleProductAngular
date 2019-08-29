@@ -17,4 +17,10 @@ export class ViewproductComponent implements OnInit {
     })
   }
 
+  deleteData(pid){
+    this.ps.deleteData(pid).subscribe();
+    this.ps.getData().subscribe(data=>{
+      this.sdata = data;
+    })
+  }
 }

@@ -10,11 +10,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class EditproductComponent implements OnInit {
 
   getpid;
-  pdata;
+  pid;
+  pname;
+  pprice;
   constructor(private ps: ProductService, private route: ActivatedRoute, private router: Router) {
     this.getpid=this.route.snapshot.paramMap.get('pid');
     this.ps.getDataById(this.getpid).subscribe(data=>{
-      this.pdata = data;
+      this.pid = data[0].productId;
+      this.pname = data[0].productName;
+      this.pprice = data[0].productPrice;
     })
    }
 
@@ -25,7 +29,7 @@ export class EditproductComponent implements OnInit {
 
   editData(){
     //console.log(this.getpid);
-    
+    this.ps.editData(this.pid,this.pname,this.pprice).subscribe();
     this.router.navigateByUrl("");
   }
 
