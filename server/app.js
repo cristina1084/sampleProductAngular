@@ -59,6 +59,13 @@ app.post("/postdata", (req,res)=>{
   })
 })
 
+app.get("/getdata/:pid",(req,res)=>{
+  product.find({productId:req.params.pid},(err,result)=>{
+    if (err) throw err;
+    else res.send(result);
+  })
+})
+
 app.listen(8080,()=>{
   console.log("Listening");
 })
