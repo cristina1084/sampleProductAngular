@@ -30,7 +30,7 @@ export class EditproductComponent implements OnInit {
   editData(){
     //console.log(this.getpid);
     this.ps.editData(this.pid,this.pname,this.pprice).subscribe();
-    this.router.navigateByUrl("");
+    this.router.navigateByUrl("/home/view");
   }
 
 }

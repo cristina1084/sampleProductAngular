@@ -21,6 +21,6 @@ export class AddproductComponent implements OnInit {
     this.ps.postData(this.pid, this.pname, this.pprice).subscribe(data=>{
 
     })
-    this.router.navigateByUrl("")
+    this.router.navigateByUrl("/home/view")
   }
 }
